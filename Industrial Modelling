@@ -1,0 +1,39 @@
+# prompt: Industrial Copper Modeling using numpy
+
+import numpy as np
+
+# Define the parameters of the model
+rho = 8.96  # density of copper (g/cm^3)
+E = 117e9  # Young's modulus (Pa)
+nu = 0.33  # Poisson's ratio
+T = 293  # temperature (K)
+alpha = 1.7e-5  # thermal expansion coefficient (1/K)
+k = 386  # thermal conductivity (W/mK)
+c = 383  # specific heat capacity (J/kgK)
+
+# Create a numpy array to store the state variables
+state = np.zeros(6)
+
+# Set the initial conditions
+state[0] = 100  # temperature (°C)
+state[1] = 0  # displacement (m)
+state[2] = 0  # velocity (m/s)
+state[3] = 0  # stress (Pa)
+state[4] = 0  # strain (m/m)
+state[5] = 0  # heat flux (W/m^2)
+
+# Time loop
+dt = 1e-3  # time step (s)
+t_end = 10  # end time (s)
+for t in np.arange(0, t_end, dt):
+  # Update the state variables
+  # ... (insert your equations here) ...
+
+  # Print the state variables
+  print("Time:", t, "s")
+  print("Temperature:", state[0], "°C")
+  print("Displacement:", state[1], "m")
+  print("Velocity:", state[2], "m/s")
+  print("Stress:", state[3], "Pa")
+  print("Strain:", state[4], "m/m")
+  print("Heat flux:", state[5], "W/m^2")
